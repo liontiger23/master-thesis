@@ -10,9 +10,6 @@
 \let\mathbb\relax % remove the definition by unicode-math
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
 
-%% Magic option for dots in labels
-\usepackage[dotinlabels]{titletoc}
-
 %% Page numbering
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -38,6 +35,10 @@
 
 %% Center headings
 \usepackage[center]{titlesec}
+\titlelabel{\thetitle.\quad}
+
+%% Magic option for dots in labels
+\usepackage[dotinlabels]{titletoc}
 
 \usepackage[center,font=singlespacing]{caption}
 
