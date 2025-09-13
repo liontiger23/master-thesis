@@ -14,6 +14,8 @@ Following command builds your thesis into `.pdf`:
 make
 ```
 
+> Note: also converts [src/title.doc](src/title.doc) to pdf and prepends to the resulting artifact.
+
 ## Publishing
 
 To "publish" the final `.pdf` you can use the following command which builds and copies `src/*.pdf` into `publish/*.pdf`
