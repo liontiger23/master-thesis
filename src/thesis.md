@@ -22,6 +22,12 @@ tblPrefix:
   - табл.
   - табл.
 toc-title: СОДЕРЖАНИЕ
+
+# Comment out if title is not needed
+include-before: |
+  ```{=latex}
+  \includepdf[pages={1}]{src/title.pdf}
+  ```
 ---
 
 \pagebreak

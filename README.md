@@ -4,7 +4,7 @@ Source markdown files located at [src](src) directory.
 Result is published at [publish](publish) directory.
 
 Source: [src/thesis.md](src/thesis.md)  
-Result: [publish/master-thesis.pdf](publish/master-thesis.pdf)
+Result: [publish/thesis.pdf](publish/thesis.pdf)
 
 ## Building
 

@@ -57,13 +57,12 @@ EXTRA_PDF = $(wildcard $(IMAGES_DIR)/pdfs/*.pdf)
 
 all: pdf
 
-#publish: $(PDF_PUBLISH)
-publish: $(PUBLISH_DIR)/master-thesis.pdf
+publish: $(PDF_PUBLISH)
 pdf:  $(PDF)
 
 clean: 
 	@echo "Cleaning up..."
-	rm -rvf $(PDF) $(SVG_PDF) $(DOT_PDF) $(SRC_DIR)/title.pdf
+	rm -rvf $(PDF) $(SVG_PDF) $(DOT_PDF)
 
 ############################
 # Publish patterns
@@ -118,10 +117,3 @@ $(PDF): PANDOC_ARGS = \
 	--citeproc \
 	--bibliography $(COMMON_DIR)/citations.bib \
   --csl $(COMMON_DIR)/gost/gost-r-7-0-5-2008-numeric.csl
-
-$(SRC_DIR)/title.pdf: $(SRC_DIR)/title.doc 
-	soffice --headless --convert-to pdf --outdir $(SRC_DIR) $<
-
-$(PUBLISH_DIR)/master-thesis.pdf: $(SRC_DIR)/title.pdf $(SRC_DIR)/thesis.pdf
-	@mkdir -p $(@D)
-	qpdf --empty --pages $^ -- $@
