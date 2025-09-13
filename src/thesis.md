@@ -8,6 +8,7 @@ listings: true
 indent: true
 codeBlockCaptions: true
 colorlinks: false
+lik-citations: true
 
 mainfont: Times New Roman
 monofont: DejaVu Sans Mono
