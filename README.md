@@ -22,5 +22,3 @@ which can then be committed to the repo:
 ```
 make publish
 ```
-
-> Note: also converts [src/title.doc](src/title.doc) to pdf and prepends to the resulting artifact.
