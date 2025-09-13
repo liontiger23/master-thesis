@@ -5,20 +5,10 @@
 %% Notes in pdf
 \usepackage{pdfcomment}
 
-\usepackage[center,font=singlespacing]{caption}
-
-
 %% Support for \mathbb and \mathcal
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \let\mathbb\relax % remove the definition by unicode-math
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
-
-%% Listings and mono fonts
-%\usepackage{DejaVuSansMono}
-%\setmonofont{DejaVuSansMono} % Can't set it via yaml in default template
-%\newfontfamily{\cyrillicfonttt}{DejaVuSansMono}
-
-%\renewcommand*\familydefault{\ttdefault}
 
 %% Magic option for dots in labels
 \usepackage[dotinlabels]{titletoc}
@@ -44,6 +34,8 @@
 
 %% Center headings
 \usepackage[center]{titlesec}
+
+\usepackage[center,font=singlespacing]{caption}
 
 %% Proper names
 \renewcommand{\lstlistingname}{Листинг}
