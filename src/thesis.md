@@ -917,9 +917,9 @@ $$ {#eq:combined-layout-total-size}
 На [@fig:layout-stats] представлено суммарное уменьшение размера интерфейсных таблиц от каждого из преобразований рассмотренных в главе [-@sec:layout], относительно базовой раскладки таблиц. На всех тестируемых приложениях итоговая раскладка дает более чем трехкратное уменьшение: от 69% до 98% от исходного размера таблиц.
 
 <div id="fig:layout-stats">
-![](images/layout-stats-1.pdf){#fig:layout-stats-1}
+![](images/pdfs/layout-stats-1.pdf){#fig:layout-stats-1}
 
-![](images/layout-stats-2.pdf){#fig:layout-stats-2}
+![](images/pdfs/layout-stats-2.pdf){#fig:layout-stats-2}
 
 Суммарное уменьшение размера интерфейсных таблиц, kB
 
@@ -933,9 +933,9 @@ $$ {#eq:combined-layout-total-size}
 [^jikes-impl]: В оригинальном подходе Jikes RVM предлагалась таблица размером в 5 элементов, и назначение виртуальных номеров делалось в порядке загрузки классов. В реализации этого подхода в Excelsior RVM используется такой же размер таблицы, а виртуальные номера назначаются в порядке обработки классов статическим компилятором.
 
 <div id="fig:layout-compare">
-![](images/layout-compare-1.pdf){#fig:layout-compare-1}
+![](images/pdfs/layout-compare-1.pdf){#fig:layout-compare-1}
 
-![](images/layout-compare-2.pdf){#fig:layout-compare-2}
+![](images/pdfs/layout-compare-2.pdf){#fig:layout-compare-2}
 
 Суммарный размер интерфейсных таблиц в сравнении с существующими подходами, kB
 </div>
@@ -1002,8 +1002,8 @@ C := Class(null, {I},   $\varnothing$)
 \end{tikzfigure}
 
 <!-- <div id="fig:layout-considerations-b">
-![p = 0](images/layout-combined-b.pdf){#fig:layout-combined-b}
-![p = 1](images/layout-marmot-b.pdf){#fig:layout-marmot-b}
+![p = 0](images/pdfs/layout-combined-b.pdf){#fig:layout-combined-b}
+![p = 1](images/pdfs/layout-marmot-b.pdf){#fig:layout-marmot-b}
 
 Таблица класса B для краевых значений гибридной эвристики
 </div> -->
@@ -1079,8 +1079,8 @@ C := Class(null, {I},   $\varnothing$)
 \end{figure}
 
 <!-- <div id="fig:layout-considerations-c">
-![p = 0](images/layout-combined-c.pdf){#fig:layout-combined-c}
-![p = 1](images/layout-marmot-c.pdf){#fig:layout-marmot-c}
+![p = 0](images/pdfs/layout-combined-c.pdf){#fig:layout-combined-c}
+![p = 1](images/pdfs/layout-marmot-c.pdf){#fig:layout-marmot-c}
 
 Таблица класса C для краевых значений гибридной эвристики
 </div> -->
