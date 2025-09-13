@@ -3,7 +3,7 @@
 Source markdown files located at [src](src) directory.
 Result is published at [publish](publish) directory.
 
-Sample: [src/thesis.md](src/thesis.md)  
+Source: [src/thesis.md](src/thesis.md)  
 Result: [publish/master-thesis.pdf](publish/master-thesis.pdf)
 
 ## Building
@@ -22,3 +22,5 @@ which can then be committed to the repo:
 ```
 make publish
 ```
+
+> Note: also converts [src/title.doc](src/title.doc) to pdf and prepends to the resulting artifact.
