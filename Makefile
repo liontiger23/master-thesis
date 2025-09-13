@@ -52,7 +52,8 @@ DOT_PDF = $(DOT_PDF_ROOT) $(DOT_PDF_TARGET)
 
 all: pdf
 
-publish: $(PDF_PUBLISH)
+#publish: $(PDF_PUBLISH)
+publish: $(PUBLISH_DIR)/master-thesis.pdf
 pdf:  $(PDF)
 
 clean: 
@@ -109,5 +110,10 @@ $(PDF): PANDOC_ARGS = \
 	--citeproc \
 	--bibliography $(COMMON_DIR)/citations.bib \
   --csl $(COMMON_DIR)/gost/gost-r-7-0-5-2008-numeric.csl
-	  
 
+$(SRC_DIR)/title.pdf: $(SRC_DIR)/title.doc 
+	soffice --headless --convert-to pdf --outdir $(SRC_DIR) $<
+
+$(PUBLISH_DIR)/master-thesis.pdf: $(SRC_DIR)/title.pdf $(SRC_DIR)/thesis.pdf
+	@mkdir -p $(@D)
+	qpdf --empty --pages $^ -- $@

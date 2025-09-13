@@ -1,14 +1,10 @@
-# Thesis template
-
-Sample template to get you started with Pandoc + LaTeX thesis.
-
-Fork this repository to bootstrap your thesis.
+# Master thesis 2018
 
 Source markdown files located at [src](src) directory.
 Result is published at [publish](publish) directory.
 
-Sample: [src/sample.md](src/sample.md)  
-Result: [publish/sample.pdf](publish/sample.pdf)
+Sample: [src/thesis.md](src/thesis.md)  
+Result: [publish/master-thesis.pdf](publish/master-thesis.pdf)
 
 ## Building
 

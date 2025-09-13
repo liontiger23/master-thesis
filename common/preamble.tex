@@ -83,6 +83,7 @@
 \sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow\space}}}
 
 \lstdefinestyle{default}{
+    language     = scala,
     basicstyle   = {\linespread{1}\ttfamily},
     %% Uncomment to move caption below listing
     %captionpos   = b,
@@ -94,12 +95,16 @@
     showstringspaces = false,
     texcl        = true,
     %% Examples of custom keyword highlighting
-    %emph         = [1]{ordered,by,break,dom,call},
-    %emphstyle    = [1]{\bfseries},
-    %emph         = [2]{super,final,protected,private,package},
-    %emphstyle    = [2]{},
-    %emph         = [3]{find,resolve},
-    %emphstyle    = [3]{\itshape},
+    emph         = [1]{ordered,by,break,dom,call},
+    emphstyle    = [1]{\bfseries},
+    emph         = [2]{super,final,protected,private,package},
+    emphstyle    = [2]{},
+    emph         = [3]{find,resolve},
+    emphstyle    = [3]{\itshape},
+    literate={-}{-}1
+        {=}{=}1
+        {->}{{$\rightarrow{}$}}2
+        {=>}{{$\Rightarrow{}$}}2,
 }
 
 \lstset{style=default}
@@ -211,6 +216,61 @@
 %\tikzset{text depth=.25ex}
 %% Align text vertically without subscript
 \tikzset{text depth=0}
+
+\tikzset{node/.style={minimum width=2em, minimum height=2em,draw,font=\ttfamily}}
+\tikzset{class/.style={node,rectangle}}
+\tikzset{interface/.style={node,circle}}
+
+\def\structnodewidth{4.5em}
+\def\structnodeheight{4.5ex}
+
+\tikzset{struct base/.style={minimum width=\structnodewidth, minimum height=\structnodeheight, inner sep=0}}
+% This is normal for courier:
+%\tikzset{head/.style={struct base,font=\small\ttfamily\bfseries,fill=gray!20}}
+%\tikzset{field/.style={struct base,font=\small\ttfamily}}
+% This looks better for dejavu
+\tikzset{head/.style={struct base,font=\ttfamily\bfseries,fill=gray!20}}
+\tikzset{field/.style={struct base,font=\ttfamily}}
+
+\tikzset{muted/.style={font=\footnotesize\ttfamily,text=gray}}
+
+
+
+\newenvironment{struct}[2][]{
+    \begin{scope}[node distance=0]
+
+    \coordinate [#1] (#2) {};
+    \def\headnode{#2}
+    \def\lastnode{#2}
+
+    \newcommand{\header}[2]{
+        \node [head] (##1) [below=of \lastnode] {##2};
+        \draw (##1.south west) -- (##1.south east);
+        \def\lastnode{##1}
+    }
+
+    \newcommand{\field}[4][draw=none]{
+        \node [field] (##3) [below=of \lastnode] {##4};
+        \draw [##1] (##3.south west) -- (##3.south east);
+        \node [muted,left=0.5em of ##3,fill=white,inner sep=0] (##3 @extra) {##2};
+        \def\lastnode{##3}
+    }
+} {
+    \node [draw,inner sep=0,fit=(\headnode) (\lastnode)] {};
+    \end{scope}
+}
+
+\newcommand{\connect}[4][0.5]{
+    \draw [#4] [->] (#2) -| ($ (#2) !#1! (#3) $) |- (#3);
+}
+
+\newcommand{\imtR}[3]{
+    \draw [decorate,decoration={brace,amplitude=0.5em}] (#1.north east) -- (#2.south east) node [midway,font=\small\ttfamily\bfseries,right=0.25em] {#3};
+}
+
+\newcommand{\imtL}[3]{
+    \draw [decorate,decoration={brace,amplitude=0.5em,mirror}] (#1.north west) -- (#2.south west) node [midway,font=\small\ttfamily\bfseries,left=0.25em] {#3};
+}
 
 
 %% Scope prefix support -- https://tex.stackexchange.com/a/128079
