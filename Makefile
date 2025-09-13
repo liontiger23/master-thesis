@@ -62,7 +62,7 @@ pdf:  $(PDF)
 
 clean: 
 	@echo "Cleaning up..."
-	rm -rvf $(PDF) $(SVG_PDF) $(DOT_PDF)
+	rm -rvf $(PDF) $(SVG_PDF) $(DOT_PDF) $(DOC_PDF)
 
 ############################
 # Publish patterns
