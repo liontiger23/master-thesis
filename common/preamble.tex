@@ -21,8 +21,12 @@
 %\fancyhead[C]{\thepage}
 \cfoot{\thepage}
 
+%% Enable catenation of pdfs (e.g. prpending title.pdf to rest of the text)
+\usepackage{pdfpages}
+
 %% Start page numbering from 2, due to title being the first one
-\setcounter{page}{2}
+%% Uncomment if title pdf is not prepended in include-before clause in yaml
+%\setcounter{page}{2}
 
 %% Double spaces
 \usepackage{setspace}

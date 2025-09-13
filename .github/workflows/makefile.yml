@@ -37,9 +37,9 @@ jobs:
         pdflatex --version
         bibtex --version
 
-    - name: Install Make, Inkscape, Graphviz and other utils
+    - name: Install Make, Inkscape, Graphviz and LibreOffice
       run: |
-        sudo apt-get install -y make inkscape graphviz qpdf libreoffice
+        sudo apt-get install -y make inkscape graphviz libreoffice
 
     - name: Make pdf
       run: make -j publish
